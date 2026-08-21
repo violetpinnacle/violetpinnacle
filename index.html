@@ -3,250 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Violet Pinnacle — Corporate Tax & Compliance Portal</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-
+  <title>Violet Pinnacle — Your Trusted TAX & GST partner</title>
   <style>
     :root {
-      --primary: #0A192F;
-      --secondary: #1E3A8A;
-      --accent: #D4AF37;
-      --bg: #F8FAFC;
-      --text: #1E293B;
-      --text-muted: #64748B;
-      --card-bg: #FFFFFF;
-      --border: #E2E8F0;
+      --primary-violet: #5e178b;
+      --accent-gold: #c59b27;
+      --dark-plum: #2d124d;
+      --light-bg: #f9f8fc;
+      --card-bg: #ffffff;
+      --text-dark: #333333;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
+
+    /* Top Bar */
+    .top-bar { background-color: var(--dark-plum); color: #fff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+    .top-bar a { color: #fff; text-decoration: none; margin-left: 15px; }
+
+    /* Navbar */
+    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 5%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary-violet); }
+    .logo-container { display: flex; align-items: center; }
+    .logo-img { height: 55px; width: auto; object-fit: contain; }
+    .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-dark); font-weight: 600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary-violet); }
+
+    /* Ultra-Bright Hero Banner Slider */
+    .hero-container { position: relative; width: 100%; height: 500px; overflow: hidden; background-color: #ffffff; }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+    .slide.active { opacity: 1; }
     
-    h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--primary); }
+    /* Pure 100% Original Brightness Images */
+    .slide-1 { background: url('./GST.png') center/cover no-repeat; }
+    .slide-2 { background: url('./Tax.png') center/cover no-repeat; }
+    .slide-3 { background: url('./Client-Meeting.png') center/cover no-repeat; }
 
-    /* Utility Top Bar */
-    .top-bar { background: var(--primary); color: #94A3B8; padding: 8px 8%; display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .top-bar a { color: #CBD5E1; text-decoration: none; margin-left: 15px; }
-
-    /* Navigation */
-    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 8%; background: #FFF; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-    .logo-img { height: 48px; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; margin-left: 25px; }
-    .btn-nav { background: var(--primary); color: #FFF !important; padding: 8px 18px; border-radius: 6px; font-weight: 600; }
-
-    /* Notice Alert Banner */
-    .alert-banner { background: #FEF2F2; border-bottom: 1px solid #FCA5A5; color: #991B1B; padding: 12px 8%; text-align: center; font-size: 14px; font-weight: 500; }
-    .alert-banner a { color: #991B1B; font-weight: 700; text-decoration: underline; margin-left: 8px; }
-
-    /* Hero */
-    .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #FFF; padding: 80px 8%; text-align: center; }
-    .hero h1 { color: #FFF; font-size: 38px; font-weight: 800; margin-bottom: 16px; }
-    .hero p { color: #CBD5E1; font-size: 18px; max-width: 700px; margin: 0 auto 30px auto; }
-    .btn-gold { background: var(--accent); color: var(--primary); padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; }
-
-    /* Section Styling */
-    .section { padding: 70px 8%; }
-    .section-title { text-align: center; font-size: 28px; margin-bottom: 8px; }
-    .section-desc { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
-
-    /* Interactive Calculator Container */
-    .interactive-card { background: #FFF; border: 1px solid var(--border); border-radius: 12px; padding: 32px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    .calc-group { margin-bottom: 20px; }
-    .calc-group label { display: block; font-weight: 600; margin-bottom: 8px; }
-    .calc-group select, .calc-group input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; }
-    .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
-    .checkbox-grid label { font-weight: 400; display: flex; align-items: center; gap: 8px; cursor: pointer; }
-    .calc-result { background: var(--bg); border-left: 4px solid var(--accent); padding: 20px; border-radius: 6px; margin-top: 24px; text-align: center; }
-    .calc-result h3 { font-size: 24px; color: var(--secondary); margin-bottom: 4px; }
-
-    /* Industry Tabs */
-    .tabs-nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
-    .tab-btn { background: #FFF; border: 1px solid var(--border); padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-    .tab-btn.active { background: var(--primary); color: #FFF; border-color: var(--primary); }
-    .tab-content { display: none; background: #FFF; padding: 30px; border-radius: 12px; border: 1px solid var(--border); max-width: 800px; margin: 0 auto; }
-    .tab-content.active { display: block; }
-
-    /* Contact Form */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #FFF; padding: 40px; border-radius: 12px; border: 1px solid var(--border); }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid var(--border); border-radius: 6px; }
-    .contact-form button { background: var(--primary); color: #FFF; border: none; padding: 14px; border-radius: 6px; font-weight: 700; width: 100%; cursor: pointer; }
-
-    footer { background: var(--primary); color: #94A3B8; text-align: center; padding: 24px; font-size: 14px; }
-
-    @media (max-width: 768px) {
-      .top-bar { display: none; }
-      .contact-grid, .checkbox-grid { grid-template-columns: 1fr; }
+    /* Floating Card Content Box at Bottom */
+    .hero-content { 
+      text-align: center; 
+      color: var(--text-dark); 
+      padding: 20px 30px; 
+      width: 90%; 
+      max-width: 850px; 
+      background: rgba(255, 255, 255, 0.95); 
+      margin-bottom: 25px; 
+      border-radius: 8px; 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      border-bottom: 4px solid var(--accent-gold);
     }
+    .hero-content h1 { font-size: 26px; color: var(--primary-violet); margin-bottom: 6px; font-weight: 700; }
+    .hero-content p { font-size: 16px; margin-bottom: 15px; color: #555555; }
+    .btn-gold { background-color: var(--accent-gold); color: #fff; padding: 10px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block; transition: 0.3s; }
+    .btn-gold:hover { background-color: #a37f1e; }
+
+    /* About Section */
+    .section-padding { padding: 60px 5%; }
+    .section-title { text-align: center; font-size: 28px; color: var(--primary-violet); margin-bottom: 30px; position: relative; }
+    .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-gold); margin: 8px auto 0; }
+    .about-box { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; max-width: 900px; margin: 0 auto; }
+    .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; text-align: left; }
+    .vm-card { background: var(--light-bg); padding: 20px; border-left: 4px solid var(--accent-gold); border-radius: 4px; }
+    .vm-card h4 { color: var(--primary-violet); margin-bottom: 8px; }
+
+    /* Services Section */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .service-card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--primary-violet); }
+    .service-card h3 { color: var(--primary-violet); margin-bottom: 15px; }
+    .service-card ul { list-style: none; }
+    .service-card li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    .service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
+
+    /* Contact Section */
+    .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .contact-info p { margin-bottom: 15px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+    .contact-form button { background: var(--primary-violet); color: #fff; border: none; padding: 12px 25px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    .contact-form button:hover { background: var(--dark-plum); }
+
+    /* Footer */
+    footer { background: var(--dark-plum); color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
   </style>
 </head>
 <body>
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <div>📞 WhatsApp: +91 6382379295 | ✉️ violetpinnacle@gmail.com</div>
-    <div>Thiruvaiyaru, Tamil Nadu</div>
+    <div>📞 WhatsApp/Call: +91 6382379295 | ✉️ violetpinnacle@gmail.com</div>
+    <div>
+      <a href="https://instagram.com/violet_pinnacle" target="_blank">Instagram</a>
+      <a href="https://facebook.com/violet_pinnacle" target="_blank">Facebook</a>
+    </div>
   </div>
 
-  <!-- Emergency Notice Alert Bar -->
-  <div class="alert-banner">
-    ⚠️ Received an Income Tax or GST Notice? 
-    <a href="#contact">Speak with our Legal Advisory Team →</a>
-  </div>
-
-  <!-- Header -->
+  <!-- Header & Nav -->
   <nav class="navbar">
-    <img src="./logo.png" alt="Violet Pinnacle" class="logo-img">
+    <div class="logo-container">
+      <img src="./logo.png" alt="Violet Pinnacle Logo" class="logo-img">
+    </div>
     <div class="nav-links">
-      <a href="#calculator">Retainer Calculator</a>
-      <a href="#industries">Industries</a>
-      <a href="#contact" class="btn-nav">Book Advisory</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact Us</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Corporate Tax Compliance & Advisory</h1>
-    <p>Seamless GST management, timely Income Tax filings, and robust bookkeeping tailored for growing businesses.</p>
-    <a href="#calculator" class="btn-gold">Estimate Retainer Cost</a>
-  </section>
-
-  <!-- FREE TOOL 1: Retainer Estimation Calculator -->
-  <section id="calculator" class="section">
-    <h2 class="section-title">Corporate Retainer Calculator</h2>
-    <p class="section-desc">Select your business parameters to view an instant monthly compliance fee estimate.</p>
-    
-    <div class="interactive-card">
-      <div class="calc-group">
-        <label>Annual Turnover Range</label>
-        <select id="turnover" onchange="calculateRetainer()">
-          <option value="1500">Under ₹20 Lakhs</option>
-          <option value="3000" selected>₹20 Lakhs – ₹1 Crore</option>
-          <option value="6000">₹1 Crore – ₹5 Crores</option>
-          <option value="12000">Above ₹5 Crores</option>
-        </select>
+  <!-- Hero Banner Slider -->
+  <div class="hero-container">
+    <div class="slide slide-1 active">
+      <div class="hero-content">
+        <h1>Complete GST Registration & Return Filing</h1>
+        <p>Seamless compliance, timely filings, and hassle-free invoicing support.</p>
+        <a href="#services" class="btn-gold">Explore GST Services</a>
       </div>
+    </div>
+    <div class="slide slide-2">
+      <div class="hero-content">
+        <h1>Income Tax Return & Assessment Support</h1>
+        <p>Expert ITR filing, TDS services, tax planning, and notice assistance.</p>
+        <a href="#services" class="btn-gold">View Tax Services</a>
+      </div>
+    </div>
+    <div class="slide slide-3">
+      <div class="hero-content">
+        <h1>Reliable Guidance for Business Growth</h1>
+        <p>End-to-end accounting, bookkeeping, and business registration support.</p>
+        <a href="#contact" class="btn-gold">Get in Touch</a>
+      </div>
+    </div>
+  </div>
 
-      <div class="calc-group">
-        <label>Select Required Monthly Services</label>
-        <div class="checkbox-grid">
-          <label><input type="checkbox" class="service-check" value="1000" checked onchange="calculateRetainer()"> GST Return Filing (GSTR-1 / 3B)</label>
-          <label><input type="checkbox" class="service-check" value="1500" checked onchange="calculateRetainer()"> ITR & Tax Audit Documentation</label>
-          <label><input type="checkbox" class="service-check" value="2000" onchange="calculateRetainer()"> Complete Bookkeeping (Tally/Zoho)</label>
-          <label><input type="checkbox" class="service-check" value="1000" onchange="calculateRetainer()"> TDS & Payroll Processing</label>
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <h2 class="section-title">About Violet Pinnacle</h2>
+    <div class="about-box">
+      <p>At <strong>Violet Pinnacle</strong>, we provide comprehensive tax, GST, and business compliance solutions tailored to make financial management effortless for businesses and individuals.</p>
+      <div class="vm-grid">
+        <div class="vm-card">
+          <h4>Vision</h4>
+          <p>Trusted guidance for a compliant future.</p>
+        </div>
+        <div class="vm-card">
+          <h4>Mission</h4>
+          <p>Simple, reliable & timely tax solutions.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="calc-result">
-        <p>Estimated Retainer Package:</p>
-        <h3 id="fee-display">₹4,500 / month</h3>
-        <small style="color: var(--text-muted);">Final pricing confirmed after initial document review.</small>
+  <!-- Services Section -->
+  <section id="services" class="section-padding" style="background-color: #f2f0f7;">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>GST Solutions</h3>
+        <ul>
+          <li>GST Registration</li>
+          <li>GST Return Filing</li>
+          <li>GST Compliance</li>
+          <li>GST Amendments</li>
+          <li>GST Notice Assistance</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Direct Tax & ITR</h3>
+        <ul>
+          <li>ITR Filing</li>
+          <li>Income Tax Notice Assistance</li>
+          <li>Tax Planning & Consultation</li>
+          <li>Tax Audit Support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Accounting & TDS</h3>
+        <ul>
+          <li>Accounting & Bookkeeping</li>
+          <li>Tally Accounting Services</li>
+          <li>TDS Services</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Business Registration</h3>
+        <ul>
+          <li>Business Registration Support</li>
+          <li>Udyam / MSME Registration</li>
+          <li>PAN Application & Correction</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- FREE TOOL 2: Sector Specific Tabs -->
-  <section id="industries" class="section" style="background: #F1F5F9;">
-    <h2 class="section-title">Industry Solutions</h2>
-    <p class="section-desc">Tailored tax advisory for your specific business sector.</p>
-
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="showTab('traders')">Traders & Retailers</button>
-      <button class="tab-btn" onclick="showTab('tech')">IT & Tech Companies</button>
-      <button class="tab-btn" onclick="showTab('manufacturers')">Manufacturers</button>
-    </div>
-
-    <div id="traders" class="tab-content active">
-      <h3>Traders & Retailers</h3>
-      <p style="margin-top: 10px; color: var(--text-muted);">
-        • Multi-channel GST sales aggregation.<br>
-        • Precise Input Tax Credit (ITC) reconciliation with GSTR-2B.<br>
-        • Inventory valuation and annual turnover audit support.
-      </p>
-    </div>
-
-    <div id="tech" class="tab-content">
-      <h3>IT & Export Services</h3>
-      <p style="margin-top: 10px; color: var(--text-muted);">
-        • Export GST Zero-Rating under Letter of Undertaking (LUT).<br>
-        • Foreign inward remittance reconciliation & FIRC handling.<br>
-        • Cross-border software TDS management.
-      </p>
-    </div>
-
-    <div id="manufacturers" class="tab-content">
-      <h3>Manufacturing Sector</h3>
-      <p style="margin-top: 10px; color: var(--text-muted);">
-        • E-Way bill compliance and stock transfers.<br>
-        • Raw material ITC claim verification.<br>
-        • Formal Tax Audit preparation and assessment defense.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section id="contact" class="section">
-    <h2 class="section-title">Initiate Contact</h2>
-    <p class="section-desc">Send us a message to schedule an introductory consultation.</p>
-
-    <div class="contact-grid">
-      <div>
-        <h3>Violet Pinnacle</h3>
-        <p style="margin-top: 15px; color: var(--text-muted);">
-          📍 <strong>Address:</strong><br>
-          #3, Ground Floor, Blue Nile Stay Complex,<br>
-          Opp. Registrar Office, Court Bus Stop,<br>
-          Thiruvaiyaru – 613204, Tamil Nadu.
-        </p>
-        <p style="margin-top: 15px; color: var(--text-muted);">
-          📞 <strong>Phone:</strong> +91 6382379295<br>
-          ✉️ <strong>Email:</strong> violetpinnacle@gmail.com
-        </p>
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p style="margin-top: 15px;"><strong>📍 Address:</strong><br>
+        #3, Ground Floor, Blue Nile Stay Complex,<br>
+        Opp. Registrar Office, Court Bus Stop,<br>
+        Thiruvaiyaru – 613204, Tamil Nadu.</p>
+        <p><strong>📞 Mobile / WhatsApp:</strong><br> +91 6382379295</p>
+        <p><strong>✉️ Email:</strong><br> violetpinnacle@gmail.com</p>
       </div>
-
-      <!-- FREE FormSubmit Endpoint -->
       <form class="contact-form" action="https://formsubmit.co/violetpinnacle@gmail.com" method="POST">
-        <input type="text" name="Name" placeholder="Business Name or Individual" required>
-        <input type="tel" name="Phone" placeholder="Mobile Number" required>
-        <input type="email" name="Email" placeholder="Email Address" required>
-        <textarea name="Message" rows="4" placeholder="Describe your tax requirements..." required></textarea>
-        <button type="submit">Submit Request</button>
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="tel" name="Phone" placeholder="Your Phone Number" required>
+        <input type="email" name="Email" placeholder="Your Email Address" required>
+        <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <p>© Violet Pinnacle. All Rights Reserved. | Free Corporate Advisory Portal</p>
+    <p>© Violet Pinnacle. All Rights Reserved. | Your Trusted TAX & GST partner</p>
   </footer>
 
-  <!-- 100% Free Client-Side Scripting -->
+  <!-- Banner Slider Script -->
   <script>
-    // Calculator Logic
-    function calculateRetainer() {
-      let base = parseInt(document.getElementById('turnover').value);
-      let checkboxes = document.querySelectorAll('.service-check');
-      let serviceTotal = 0;
-      
-      checkboxes.forEach(cb => {
-        if(cb.checked) {
-          serviceTotal += parseInt(cb.value);
-        }
-      });
-
-      let total = base + serviceTotal;
-      document.getElementById('fee-display').innerText = '₹' + total.toLocaleString('en-IN') + ' / month';
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
     }
-
-    // Tabs Logic
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      
-      document.getElementById(tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
-    }
+    
+    setInterval(showNextSlide, 4000);
   </script>
 
 </body>
