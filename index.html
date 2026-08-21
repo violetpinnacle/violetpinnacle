@@ -15,10 +15,11 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--light-bg); color: var(--text-dark); line-height: 1.6; }
 
     /* Top Bar */
-    .top-bar { background-color: var(--dark-plum); color: #fff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+    .top-bar { background-color: var(--dark-plum); color: #fff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 14px; flex-wrap: wrap; gap: 10px; }
     .top-bar a { color: #fff; text-decoration: none; margin-left: 15px; }
 
     /* Navbar */
@@ -57,15 +58,22 @@
     .service-card li { margin-bottom: 10px; padding-left: 20px; position: relative; }
     .service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
 
-    /* Contact Section */
-    .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    /* Contact Section (Updated & Centered) */
+    .contact-container { display: flex; justify-content: center; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; text-align: center; }
     .contact-info p { margin-bottom: 15px; }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
-    .contact-form button { background: var(--primary-violet); color: #fff; border: none; padding: 12px 25px; border-radius: 4px; font-weight: bold; cursor: pointer; }
-    .contact-form button:hover { background: var(--dark-plum); }
 
     /* Footer */
     footer { background: var(--dark-plum); color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .top-bar { justify-content: center; text-align: center; }
+      .navbar { flex-direction: column; gap: 10px; text-align: center; }
+      .nav-links a { margin: 0 10px; }
+      .vm-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 26px; }
+      .hero-content p { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -189,13 +197,6 @@
         <p><strong>📞 Mobile / WhatsApp:</strong><br> +91 6382379295</p>
         <p><strong>✉️ Email:</strong><br> violetpinnacle@gmail.com</p>
       </div>
-      <form class="contact-form" action="mailto:violetpinnacle@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Your Name" required>
-        <input type="tel" name="Phone" placeholder="Your Phone Number" required>
-        <input type="email" name="Email" placeholder="Your Email Address" required>
-        <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
     </div>
   </section>
 
