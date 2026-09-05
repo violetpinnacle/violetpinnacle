@@ -18,9 +18,9 @@ We are committed to delivering professional, reliable, and transparent consultan
 - Training & Workshops  
 
 ## 🌐 Connect With Us
-- 📍 Location: Your Office Address Here  
-- 📧 Email: yourmail@example.com  
-- 📞 Phone: +91-XXXXXXXXXX  
+- 📍 Location: #3, GROUND FLOOR, BLUE NILE STAY COMPLEX, OPP. REGISTRAR OFFICE, COURT BUS STOP, THIRUVAIYARU, THANJAVUR - DT - 613204  
+- 📧 Email: violetpinnacle@example.com  
+- 📞 Phone: +91-6382379295  
 - 🔗 [Instagram](https://instagram.com/violet_pinnacle)  
 - 🔗 [Facebook](https://facebook.com/VioletPinnacle)  
 
