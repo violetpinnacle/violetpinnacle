@@ -3,63 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Violet Pinnacle - Tax & GST Services</title>
+  <title>Violet Pinnacle | Tax & GST Consultancy Services</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span>📞 Helpline: <a href="tel:+916382379295">+91 63823 79295</a> | ✉️ <a href="mailto:violetpinnacle@gmail.com">violetpinnacle@gmail.com</a></span>
+      <span>Office Hours: Mon - Sat (9:30 AM - 7:00 PM)</span>
+    </div>
+  </div>
+
   <!-- Header -->
   <header>
-    <img src="logo-header.png" alt="Violet Pinnacle Logo" class="logo">
-    <h1>Violet Pinnacle</h1>
-    <p>Tax & GST Consultancy Services</p>
+    <div class="container header-container">
+      <div>
+        <h1>Violet Pinnacle</h1>
+        <p class="tagline">Tax & GST Consultancy Services</p>
+      </div>
+      <div class="badge">
+        <span>Authorized GST & Tax Practitioner</span>
+      </div>
+    </div>
   </header>
 
   <!-- Navigation -->
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="container">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
+  <!-- Live Notice Ticker (Option 3) -->
+  <div class="ticker-container">
+    <div class="container ticker-flex">
+      <span class="ticker-label">LATEST UPDATES:</span>
+      <marquee behavior="scroll" direction="left" scrollamount="6">
+        📌 File your GSTR-3B & GSTR-1 on time to avoid late fees | 📌 Income Tax Return (ITR) filing open for FY 2025-26 | 📌 Apply for new GST, MSME, & DSC registrations at Violet Pinnacle.
+      </marquee>
+    </div>
+  </div>
+
   <!-- Main Content -->
-  <main>
-    <section class="welcome">
-      <h2>Welcome to Violet Pinnacle</h2>
-      <p>Your trusted partner for GST, Tax, and Accounting solutions.</p>
+  <main class="container">
+    <section class="hero-section">
+      <h2>Professional Accounting & Tax Compliance Solutions</h2>
+      <p>Providing accurate, reliable, and timely tax consultancy for individuals, small businesses, and corporations in Thiruvaiyaru and across Tamil Nadu.</p>
     </section>
 
-    <section class="services-overview">
-      <h2>Our Services</h2>
-      <ul>
-        <li><a href="gst.html">GST</a></li>
-        <li><a href="pan.html">PAN</a></li>
-        <li><a href="dsc.html">DSC</a></li>
-        <li><a href="msme.html">MSME</a></li>
-        <li><a href="accounting.html">Accounting</a></li>
-        <li><a href="tds.html">TDS</a></li>
-        <li><a href="audit.html">Audit</a></li>
-        <li><a href="training.html">Training</a></li>
-      </ul>
+    <!-- Service Modules Grid (Option 2) -->
+    <section class="services-section">
+      <h2 class="section-title">Our Practice Areas</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>GST Services</h3>
+          <p>Registration, monthly filing (GSTR-1, 3B, 9), ITC reconciliation, and audit assistance.</p>
+          <a href="gst.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🪪</div>
+          <h3>PAN & TAN</h3>
+          <p>New PAN/TAN applications, corrections, and linking services for individuals and entities.</p>
+          <a href="pan.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔑</div>
+          <h3>Digital Signature (DSC)</h3>
+          <p>Class 3 Digital Signature Certificate issuance for e-filing, tenders, and official sign-offs.</p>
+          <a href="dsc.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏭</div>
+          <h3>MSME / Udyam</h3>
+          <p>Udyam registration for government schemes, subsidies, and priority bank loans.</p>
+          <a href="msme.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📚</div>
+          <h3>Bookkeeping & Accounting</h3>
+          <p>End-to-end accounting services, financial statements, and balance sheet preparation.</p>
+          <a href="accounting.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📑</div>
+          <h3>TDS Compliance</h3>
+          <p>TDS computation, quarterly return filing (24Q, 26Q), and Form 16/16A generation.</p>
+          <a href="tds.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Tax Audit Support</h3>
+          <p>Assistance in internal audit, income tax audit compliance, and response to notices.</p>
+          <a href="audit.html">Learn More &rarr;</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Taxation Training</h3>
+          <p>Practical GST and Tally accounting training programs for students and business owners.</p>
+          <a href="training.html">Learn More &rarr;</a>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- Floating WhatsApp Contact Button (Option 4) -->
+  <a href="https://wa.me/916382379295" class="whatsapp-float" target="_blank">
+    💬 Chat on WhatsApp
+  </a>
+
   <!-- Footer -->
   <footer>
-    <section class="connect">
-      <h3>Connect With Us</h3>
-      <a href="https://maps.google.com" target="_blank"><img src="map.png" alt="Map"></a>
-      <a href="https://instagram.com/violet_pinnacle" target="_blank">Instagram</a>
-      <a href="https://facebook.com/VioletPinnacle" target="_blank">Facebook</a>
-    </section>
-    <section class="contact">
-      <p>Email: <a href="mailto:violetpinnacle@gmail.com">violetpinnacle@gmail.com</a></p>
-      <p>Phone: <a href="tel:+916382379295">+91 6382379295</a></p>
-      <p>Address: #3, Ground Floor, Blue Nile Stay Complex, Opp. Registrar Office, Court Bus Stop, Thiruvaiyaru, Thanjavur DT - 613204</p>
-    </section>
-    <p>&copy; 2026 VIOLET PINNACLE. All Rights Reserved.</p>
+    <div class="container footer-content">
+      <div class="footer-col">
+        <h3>Violet Pinnacle</h3>
+        <p>Tax & Accounting Consultancy Services</p>
+        <p>Thiruvaiyaru, Thanjavur District.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="https://instagram.com/violet_pinnacle" target="_blank">Instagram</a>
+        <a href="https://facebook.com/VioletPinnacle" target="_blank">Facebook</a>
+        <a href="https://maps.google.com" target="_blank">Locate on Google Maps</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:violetpinnacle@gmail.com">violetpinnacle@gmail.com</a></p>
+        <p>Phone: <a href="tel:+916382379295">+91 63823 79295</a></p>
+        <p>Address: #3, Ground Floor, Blue Nile Stay Complex, Opp. Registrar Office, Court Bus Stop, Thiruvaiyaru, Thanjavur DT - 613204</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Violet Pinnacle. All Rights Reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>
